@@ -1,0 +1,86 @@
+openapi: 3.0.0
+
+info:
+  title: Subdocument Array Mutation
+  description: Subdocument Array Mutation APIs
+  version: 1.0.0
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+
+paths:
+  /mutate:
+    post:
+      summary: Mutate operations
+      description: |
+        Mutate and prepare all operations for database
+      operationId: mutate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/MutationBody"
+        description: User with its changes to be applied
+      responses:
+        "200":
+          description: Success
+        "422":
+          description: Invalid data
+
+servers:
+  - url: https://sda.guilhermesteves.dev
+
+components:
+  schemas:
+    MutationBody:
+      type: object
+      properties:
+        mutation:
+          type: array
+          description: Posts being mutated
+          items:
+            $ref: '#/components/schemas/Post'
+        user:
+          $ref: '#/components/schemas/User'
+
+    User:
+      type: object
+      properties:
+        _id:
+          type: string
+          description: user id
+          example: 1, 0c760c66-fb55-4c9b-97eb-cea8edfb4551
+        name:
+          type: string
+          description: user name
+          example: John Doe
+        posts:
+          type: array
+          description: Posts to be manipulated/mutated
+          items:
+            $ref: '#/components/schemas/Post'
+    Post:
+      properties:
+        _id:
+          type: string
+          description: post unique id
+          example: '1'
+        value:
+          type: string
+          description: a simple text
+          example: Good morning
+        mentions:
+          type: array
+          description: Mentions in the post
+          items:
+            $ref: '#/components/schemas/Mention'
+    Mention:
+      properties:
+        _id:
+          type: string
+          description: mention unique id
+          example: '7'
+        text:
+          type: string
+          description: a simple text
+          example: What you've been up to?
