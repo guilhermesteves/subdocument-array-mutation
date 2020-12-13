@@ -1,0 +1,37 @@
+{
+  "name": "subdocument-array-mutation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docker": "docker-compose up --force-recreate",
+    "dev": "yarn install; serverless offline start --noPrependStageInUrl --stage local --useSeparateProcesses",
+    "test": "mocha --recursive test/unit/",
+    "unit-test": "mocha --recursive test/unit/",
+    "integration-test": "mocha --recursive test/integration/"
+  },
+  "keywords": [
+    "api",
+    "serverless",
+    "lambda",
+    "AWS"
+  ],
+  "author": "Guilherme Esteves <eu@guilhermesteves.dev>",
+  "license": "MIT",
+  "dependencies": {
+    "serverless-pseudo-parameters": "^1.6.0",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.741.0",
+    "chai": "^4.2.0",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^12.0.1",
+    "eslint-plugin-import": "^2.22.0",
+    "mocha": "^5.2.0",
+    "serverless-offline": "^6.8.0",
+    "serverless-plugin-split-stacks": "^1.9.2",
+    "sinon": "^9.0.2",
+    "uuid": "^8.3.0"
+  }
+}
