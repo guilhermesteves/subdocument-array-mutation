@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "286ac5ab-1935-4513-9a06-53c5e95aa556",
+		"name": "Subdocument Array Mutation",
+		"description": "Subdocument Array Mutation APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Mutate operations",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mutation\": [\n        {\n            \"_id\": \"<string>\",\n            \"value\": \"<string>\",\n            \"mentions\": [\n                {\n                    \"_id\": \"<string>\",\n                    \"text\": \"<string>\"\n                },\n                {\n                    \"_id\": \"<string>\",\n                    \"text\": \"<string>\"\n                }\n            ]\n        },\n        {\n            \"_id\": \"<string>\",\n            \"value\": \"<string>\",\n            \"mentions\": [\n                {\n                    \"_id\": \"<string>\",\n                    \"text\": \"<string>\"\n                },\n                {\n                    \"_id\": \"<string>\",\n                    \"text\": \"<string>\"\n                }\n            ]\n        }\n    ],\n    \"user\": {\n        \"_id\": \"{{$guid}}\",\n        \"name\": \"{{$randomFullName}}\",\n        \"posts\": [\n            {\n                \"_id\": \"<string>\",\n                \"value\": \"<string>\",\n                \"mentions\": [\n                    {\n                        \"_id\": \"<string>\",\n                        \"text\": \"<string>\"\n                    },\n                    {\n                        \"_id\": \"<string>\",\n                        \"text\": \"<string>\"\n                    }\n                ]\n            },\n            {\n                \"_id\": \"<string>\",\n                \"value\": \"<string>\",\n                \"mentions\": [\n                    {\n                        \"_id\": \"<string>\",\n                        \"text\": \"<string>\"\n                    },\n                    {\n                        \"_id\": \"<string>\",\n                        \"text\": \"<string>\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/mutate",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"mutate"
+					]
+				},
+				"description": "Mutate and prepare all operations for database\n"
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mutation\": [\n        {\n            \"_id\": \"<string>\",\n            \"value\": \"Good morning\",\n            \"mentions\": [\n                {\n                    \"_id\": \"<string>\",\n                    \"text\": \"What you've been up to?\"\n                },\n                {\n                    \"_id\": \"<string>\",\n                    \"text\": \"What you've been up to?\"\n                }\n            ]\n        },\n        {\n            \"_id\": \"<string>\",\n            \"value\": \"Good morning\",\n            \"mentions\": [\n                {\n                    \"_id\": \"<string>\",\n                    \"text\": \"What you've been up to?\"\n                },\n                {\n                    \"_id\": \"<string>\",\n                    \"text\": \"What you've been up to?\"\n                }\n            ]\n        }\n    ],\n    \"user\": {\n        \"_id\": \"1, 0c760c66-fb55-4c9b-97eb-cea8edfb4551\",\n        \"name\": \"John Doe\",\n        \"posts\": [\n            {\n                \"_id\": \"<string>\",\n                \"value\": \"Good morning\",\n                \"mentions\": [\n                    {\n                        \"_id\": \"<string>\",\n                        \"text\": \"What you've been up to?\"\n                    },\n                    {\n                        \"_id\": \"<string>\",\n                        \"text\": \"What you've been up to?\"\n                    }\n                ]\n            },\n            {\n                \"_id\": \"<string>\",\n                \"value\": \"Good morning\",\n                \"mentions\": [\n                    {\n                        \"_id\": \"<string>\",\n                        \"text\": \"What you've been up to?\"\n                    },\n                    {\n                        \"_id\": \"<string>\",\n                        \"text\": \"What you've been up to?\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/mutate",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"mutate"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Invalid data",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mutation\": [\n        {\n            \"_id\": \"<string>\",\n            \"value\": \"Good morning\",\n            \"mentions\": [\n                {\n                    \"_id\": \"<string>\",\n                    \"text\": \"What you've been up to?\"\n                },\n                {\n                    \"_id\": \"<string>\",\n                    \"text\": \"What you've been up to?\"\n                }\n            ]\n        },\n        {\n            \"_id\": \"<string>\",\n            \"value\": \"Good morning\",\n            \"mentions\": [\n                {\n                    \"_id\": \"<string>\",\n                    \"text\": \"What you've been up to?\"\n                },\n                {\n                    \"_id\": \"<string>\",\n                    \"text\": \"What you've been up to?\"\n                }\n            ]\n        }\n    ],\n    \"user\": {\n        \"_id\": \"1, 0c760c66-fb55-4c9b-97eb-cea8edfb4551\",\n        \"name\": \"John Doe\",\n        \"posts\": [\n            {\n                \"_id\": \"<string>\",\n                \"value\": \"Good morning\",\n                \"mentions\": [\n                    {\n                        \"_id\": \"<string>\",\n                        \"text\": \"What you've been up to?\"\n                    },\n                    {\n                        \"_id\": \"<string>\",\n                        \"text\": \"What you've been up to?\"\n                    }\n                ]\n            },\n            {\n                \"_id\": \"<string>\",\n                \"value\": \"Good morning\",\n                \"mentions\": [\n                    {\n                        \"_id\": \"<string>\",\n                        \"text\": \"What you've been up to?\"\n                    },\n                    {\n                        \"_id\": \"<string>\",\n                        \"text\": \"What you've been up to?\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/mutate",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"mutate"
+							]
+						}
+					},
+					"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+					"code": 422,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"id": "baseUrl",
+			"key": "baseUrl",
+			"value": "https://sda.guilhermesteves.dev",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
