@@ -1,0 +1,10 @@
+  # Mutation Endpoints
+  mutate:
+    handler: modules/mutation/endpoints/mutate.handler
+    memorySize: 128
+    timeout: 30
+    events:
+      - http:
+          path: mutate
+          method: post
+          cors: true
