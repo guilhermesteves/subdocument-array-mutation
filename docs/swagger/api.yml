@@ -36,10 +36,13 @@ components:
       type: object
       properties:
         mutation:
-          type: array
-          description: Posts being mutated
-          items:
-            $ref: '#/components/schemas/Post'
+          type: object
+          properties:
+            posts:
+              type: array
+              description: Posts being mutated
+              items:
+                $ref: '#/components/schemas/Post'
         user:
           $ref: '#/components/schemas/User'
 
